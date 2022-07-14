@@ -1,18 +1,24 @@
-<h2>{{ hero.name | uppercase }} Details</h2>
-<div><span>id: </span>{{ hero.id }}</div>
-<div><span>name: </span>{{ hero.name }}</div>
+<h2>Heroes List</h2>
 
 <div>
-  <label for="name">Hero name: </label>
-  <input type="text" id="name" [(ngModel)]="hero.name" placeholder="name" />
+  <label for="new-hero">Hero Name:</label>
+  <input type="text" id="new-hero" #heroName />
+
+  <button
+    type="button"
+    class="add-button"
+    (click)="add(heroName.value); heroName.value = ''"
+  >
+    Add hero
+  </button>
 </div>
 
-<h2>Heroes List</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/heroes/{{ hero.id }}">
       <span class="badge">{{ hero.id }}</span>
       <span class="name">{{ hero.name }}</span>
     </a>
+    <button class="delete" (click)="delete(hero)">X</button>
   </li>
 </ul>

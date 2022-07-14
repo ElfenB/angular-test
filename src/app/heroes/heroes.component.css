@@ -36,6 +36,7 @@
   color: #fafafa;
 }
 
+/* This is a bit janky because the preset came like this */
 .heroes .badge {
   display: inline-block;
   font-size: small;
@@ -45,10 +46,31 @@
   line-height: 1em;
   position: relative;
   left: -1px;
-  top: -4px;
-  height: 1.8em;
+  top: -5px;
+  height: 1.97em;
   min-width: 16px;
   text-align: right;
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
+}
+
+input {
+  padding: 0.3rem;
+  margin: 1rem;
+}
+
+.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2rem;
+  padding: initial;
+  transform: translateX(10px);
+  margin: initial;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: inline-block;
+  background: rgb(240, 73, 51);
+  font-family: 'Courier New', Courier, monospace;
 }
